@@ -9,14 +9,13 @@
 <body>
 	<fieldset>
 		<legend>Login</legend>
-		<form method="post">
+		<form action="/post/login" method="post">
 			<p>
 				<input type="text" name="username">
 			<p>
 				<input type="password" name="password">
 			<button>Login</button>
 		</form>
-		
 	</fieldset>
 </body>
 </html>

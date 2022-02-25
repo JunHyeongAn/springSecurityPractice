@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeContorller {
 	@GetMapping("/")
 	public String Home() {
-		System.out.println("in");
 		return "home";
 	}
 	
@@ -15,4 +14,13 @@ public class HomeContorller {
 	public String loginGET() {
 		return "login";
 	}
+	
+	@GetMapping("/loginSuccess")
+	public void loginSuccess() {}
+	
+	@GetMapping("/admin")
+	public void admin() {}
+	
+	@GetMapping("/error")
+	public void error() {}
 }
