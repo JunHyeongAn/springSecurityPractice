@@ -3,29 +3,28 @@ package com.example.security;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.example.security.entity.UserEntity;
+import com.example.security.entity.User;
 import com.example.security.model.Role;
-import com.example.security.service.UserSecurityService;
+import com.example.security.service.UserService;
 
 @SpringBootTest
 class SpringSecurityApplicationTests {
 	@Autowired
-	UserSecurityService service;
-
-	@Test
-	void contextLoads() {
-		System.out.println(Role.valueOf("ADMIN"));
-	}
+	UserService userService;
 	
 	@Test
-	void saveTest() {
-		UserEntity e = UserEntity.builder()
+	public void saveUser() {
+		PasswordEncoder encoder = new BCryptPasswordEncoder();
+
+		User user = User.builder()
 				.id("test2")
-				.password("1234")
-				.name("test2name")
-				.role("ADMIN").build();
+				.name("test2")
+				.password(encoder.encode("1234"))
+				.role(Role.ADMIN).build();
 		
-		service.save(e);
+		userService.saveUser(user);
 	}
 }

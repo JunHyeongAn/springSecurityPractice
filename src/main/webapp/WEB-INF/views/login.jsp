@@ -9,7 +9,7 @@
 <body>
 	<fieldset>
 		<legend>Login</legend>
-		<form action="/post/login" method="post">
+		<form action="/login" method="post">
 			<p>
 				<input type="text" name="username">
 			<p>
