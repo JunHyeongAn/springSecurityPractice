@@ -13,6 +13,7 @@ public class HomeContorller {
 		if(user != null) {
 			System.out.println(user.getName());
 			System.out.println(user.getId());
+			System.out.println(user);
 		}
 		return "home";
 	}
@@ -20,6 +21,10 @@ public class HomeContorller {
 	@GetMapping("/login")
 	public String loginGET() {
 		return "login";
+	}
+	@GetMapping("/login2")
+	public String loginGET2() {
+		return "login2";
 	}
 	
 	@GetMapping("/loginSuccess")
